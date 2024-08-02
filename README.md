@@ -1,11 +1,11 @@
 # openwechat
 
-[![Go Doc](https://pkg.go.dev/badge/github.com/eatMoreApple/openwechat)](https://godoc.org/github.com/eatMoreApple/openwechat)
-[![Release](https://img.shields.io/github/v/release/eatmoreapple/openwechat.svg?style=flat-square)](https://github.com/eatmoreapple/openwechat/releases)
-[![Go Report Card](https://goreportcard.com/badge/github.com/eatmoreapple/openwechat)](https://goreportcard.com/badge/github.com/eatmoreapple/openwechat)
+[![Go Doc](https://pkg.go.dev/badge/github.com/silence934/openwechat)](https://godoc.org/github.com/silence934/openwechat)
+[![Release](https://img.shields.io/github/v/release/eatmoreapple/openwechat.svg?style=flat-square)](https://github.com/silence934/openwechat/releases)
+[![Go Report Card](https://goreportcard.com/badge/github.com/silence934/openwechat)](https://goreportcard.com/badge/github.com/silence934/openwechat)
 [![Stars](https://img.shields.io/github/stars/eatmoreapple/openwechat.svg?style=flat-square)](https://img.shields.io/github/stars/eatmoreapple/openwechat.svg?style=flat-square)
 [![Forks](https://img.shields.io/github/forks/eatmoreapple/openwechat.svg?style=flat-square)](https://img.shields.io/github/forks/eatmoreapple/openwechat.svg?style=flat-square)
-[![Sourcegraph](https://sourcegraph.com/github.com/eatmoreapple/openwechat/-/badge.svg)](https://sourcegraph.com/github.com/eatmoreapple/openwechat?badge)
+[![Sourcegraph](https://sourcegraph.com/github.com/silence934/openwechat/-/badge.svg)](https://sourcegraph.com/github.com/silence934/openwechat?badge)
 
 > golang版个人微信号API, 突破登录限制，类似开发公众号一样，开发个人微信号
 
@@ -21,7 +21,7 @@
 ### 安装
 
 ```shell
-go get -u github.com/eatmoreapple/openwechat
+go get -u github.com/silence934/openwechat
 ```
 
 ### 快速开始
@@ -31,7 +31,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/eatmoreapple/openwechat"
+	"github.com/silence934/openwechat"
 )
 
 func main() {
@@ -85,7 +85,7 @@ func main() {
 
 ### 项目主页
 
-[https://github.com/eatmoreapple/openwechat](https://github.com/eatmoreapple/openwechat)
+[https://github.com/silence934/openwechat](https://github.com/silence934/openwechat)
 
 ## Thanks
 

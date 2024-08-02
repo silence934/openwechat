@@ -85,7 +85,7 @@ func (c *Caller) GetLoginInfo(ctx context.Context, path *url.URL) (*LoginInfo, e
 	// xml结构体序列化储存
 	// 为什么这里不直接使用resp.Body?
 	// 因为要确保传入的reader实现了 io.ByteReader 接口
-	// https://github.com/eatmoreapple/openwechat/pull/345
+	// https://github.com/silence934/openwechat/pull/345
 	if err = xml.NewDecoder(bytes.NewBuffer(bs)).Decode(&loginInfo); err != nil {
 		return nil, err
 	}
