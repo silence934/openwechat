@@ -382,16 +382,27 @@ func New(ctx context.Context) *Bot {
 // mode不传入默认为 openwechat.Normal,详情见mode
 //
 //	bot := openwechat.DefaultBot(openwechat.Desktop)
-func DefaultBot(prepares ...BotPreparer) *Bot {
+func DefaultBot(w *StreamWrite, prepares ...BotPreparer) *Bot {
 	bot := NewBot(context.Background())
 	// 获取二维码回调
-	bot.UUIDCallback = PrintlnQrcodeUrl
+	bot.UUIDCallback = func(uuid string) {
+		println("访问下面网址扫描二维码登录")
+		w.Write("扫码成功,请在手机上确认登录")
+		qrcodeUrl := GetQrcodeUrl(uuid)
+		println(qrcodeUrl)
+		w.Write(qrcodeUrl)
+
+		// browser open the login url
+		_ = open(qrcodeUrl)
+	}
 	// 扫码回调
 	bot.ScanCallBack = func(_ CheckLoginResponse) {
+		w.Write("扫码成功,请在手机上确认登录")
 		log.Println("扫码成功,请在手机上确认登录")
 	}
 	// 登录回调
 	bot.LoginCallBack = func(_ CheckLoginResponse) {
+		w.Write("登录成功")
 		log.Println("登录成功")
 	}
 	// 心跳回调函数
@@ -406,7 +417,7 @@ func DefaultBot(prepares ...BotPreparer) *Bot {
 }
 
 func Default(prepares ...BotPreparer) *Bot {
-	return DefaultBot(prepares...)
+	return DefaultBot(nil, prepares...)
 }
 
 // GetQrcodeUrl 通过uuid获取登录二维码的url
